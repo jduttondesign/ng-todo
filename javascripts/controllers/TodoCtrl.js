@@ -32,7 +32,15 @@ app.controller("TodoCtrl", ($scope, ItemFactory) => {
             getItems();
             $scope.newTask = {};
             $scope.showListView = true;
-        });
-    };
+        })
+    }
+
+$scope.deleteItem = function(itemId){
+    console.log("you deleted me");
+    ItemFactory.deletedItem(itemId).then(function(reponse){
+        getItems();//refresh Dom after click input of itemID
+    })
+}
+
 
 });
