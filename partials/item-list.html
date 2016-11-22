@@ -12,7 +12,7 @@
 <div ng-repeat="item in items | filter: {isCompleted:false} | filter: searchText">
     <div class="panel panel-default">    
         <div class="panel-body">
-            <div class="col-xs-1"><input type="checkbox" name="" ng-checked="item.isCompleted">
+            <div class="col-xs-1"><input type="checkbox" name="" ng-model="item.isCompleted" ng-change="inputChange(item)">
             </div>
             <div class="col-xs-7"><a ng-href="#/items/view/{{item.id}}">{{item.task}}</a></div>
             <div class="col-xs-1">{{item.assignedTo}}</div>
@@ -24,7 +24,7 @@
 <div ng-repeat="item in items | filter: {isCompleted:true}">
     <div class="panel panel-default">    
         <div class="panel-body">
-            <div class="col-xs-1"><input type="checkbox" name="" ng-checked="item.isCompleted">
+            <div class="col-xs-1"><input type="checkbox" name="" ng-model="item.isCompleted" ng-change="inputChange(item)">
             </div>
             <div class="col-xs-7"><a ng-href="#/items/view/{{item.id}}">{{item.task}}</a></div>
             <div class="col-xs-1">{{item.assignedTo}}</div>

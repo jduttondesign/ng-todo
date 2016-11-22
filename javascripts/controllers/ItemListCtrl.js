@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("ItemListCtrl", function($scope,  ItemFactory) {
+app.controller("ItemListCtrl", function($scope, ItemFactory) {
 	$scope.message = [];
 
 
@@ -19,6 +19,11 @@ app.controller("ItemListCtrl", function($scope,  ItemFactory) {
         getItems();//refresh Dom after click input of itemID
     });
 };
+$scope.inputChange = function(thingy){
+    ItemFactory.editItem(thingy).then(function(response){
+        console.log("ctrl inputChange response", response);
+    })
+}
 
 });
 
