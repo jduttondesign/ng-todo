@@ -2,10 +2,12 @@
 
 app.factory("ItemFactory", function($q, $http, FIREBASE_CONFIG) {
 
-    var getItemList = function() {
+    var getItemList = function(userId) {
+        console.log("userId at factory", userId);
         return $q((resolve, reject) => {
-            $http.get(`${FIREBASE_CONFIG.databaseURL}/items.json`)
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/items.json?orderBy="uid"&equalTo="${userId}"`)
             .success(function(response) {
+                console.log("response", response);
                 let items = [];
                 Object.keys(response).forEach(function(key) {
                     response[key].id = key;
@@ -25,7 +27,8 @@ app.factory("ItemFactory", function($q, $http, FIREBASE_CONFIG) {
                     JSON.stringify({
                         assignedTo: newItem.assignedTo,
                         isCompleted: newItem.isCompleted,
-                        task: newItem.task
+                        task: newItem.task,
+                        uid: newItem.uid
                     })
                 )
             .success((postResponse) => {
@@ -44,7 +47,8 @@ app.factory("ItemFactory", function($q, $http, FIREBASE_CONFIG) {
                     JSON.stringify({
                         assignedTo: editItem.assignedTo,
                         isCompleted: editItem.isCompleted,
-                        task: editItem.task
+                        task: editItem.task,
+                        uid: editItem.uid
                     })
                 )
             .success((editResponse) => {

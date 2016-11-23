@@ -1,21 +1,39 @@
 
-
-{
-   "items":{
-        "item0":{
-        "task": "mow the lawn",
-        "isCompleted": true,
-        "assignedTo": "Zoe"
+    {
+        "items":{
+            "item0":{
+                "task": "mow the lawn",
+                "isCompleted": true,
+                "assignedTo": "Zoe",
+                "uid":"aEZbmsIN70euvYrJoRMaVfn24MP2"
+            },
+            "item1":{
+                "task": "mow the grass",
+                "isCompleted": false,
+                "assignedTo": "Justin",
+                "uid":"aEZbmsIN70euvYrJoRMaVfn24MP2"
+            },
+            "item2":{
+                "task": "clean the house",
+                "isCompleted": false,
+                "assignedTo": "Katie",
+                "uid":"aEZbmsIN70euvYrJoRMaVfn24MP2"
+            },
+             "item3":{
+                "task": "do code homework",
+                "isCompleted": false,
+                "assignedTo": "Jennifer",
+                "uid":"ZixZJtq7u7R04gTCWEeOtis7qkv2"
+            }
         },
-        "item1":{
-        "task": "mow the grass",
-        "isCompleted": false,
-        "assignedTo": "Justin"
-        },
-    "item2":{
-        "task": "clean the house",
-        "isCompleted": false,
-        "assignedTo": "Katie"
+        "users":{
+            "user0":{
+                "uid":"aEZbmsIN70euvYrJoRMaVfn24MP2",
+                "username":"jennifer"
+            },
+            "user1":{
+                "uid":"ZixZJtq7u7R04gTCWEeOtis7qkv2",
+                "username":"b"
+            }
         }
     }
-}
